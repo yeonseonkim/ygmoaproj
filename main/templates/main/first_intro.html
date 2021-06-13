@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>용기모아</title>
+    <!-- <link rel="stylesheet" type="text/css" href="extern.css"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/first.css' %}"/>
+
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <input type="image" src="{% static 'img/logo.png' %}" alt="로고 이미지" width="100">
+            <div id="content"><h1><a href="{% url 'login' %}" id="hd">용기모아</a></h1></div>
+        </div>
+    </header>
+    <br>
+    <br>
+    <nav>
+        <ul>
+            <li class="tab"><a href="{% url 'first_intro' %}">&nbsp;&nbsp;&nbsp;소개&nbsp;&nbsp;&nbsp;</a></li>
+            <li class="tab"><a href="{% url 'second_my' %}">&nbsp;&nbsp;&nbsp;마이페이지&nbsp;&nbsp;&nbsp;</a></li>
+            <li class="tab"><a href="{% url 'third_pchange' %}">&nbsp;&nbsp;&nbsp;지역화폐로 전환&nbsp;&nbsp;&nbsp;</a></li>
+            <li class="tab"><a href="{% url 'blog' %}">&nbsp;&nbsp;&nbsp;공지사항&nbsp;&nbsp;&nbsp;</a></li>
+
+        </ul>
+        
+    </nav>
+    
+    <section>
+    	<div>
+    	<h4>사이트 소개</h4>
+    	<input type="image" src="{% static 'img/용기모아소개.png' %}" alt="용기모아 소개 이미지" width="500">
+    	</div><br>
+    	<hr>
+
+    	<div>
+    	<h4>취지</h4>
+    	<input type="image" src="{% static 'img/좋은취지.png' %}" alt="좋은 취지 이미지" width="500">
+    	</div><br>   
+    </section>
+
+    <footer>
+    </footer>
+    
+</body>
+</html>

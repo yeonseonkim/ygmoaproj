@@ -1,0 +1,17 @@
+회원가입페이지
+
+<br>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    당신은? <select name="auth" >
+        <option value="user">일반 사용자</option>
+        <option value="store">매장측</option>
+    </select><br>
+    이름: <input name="korname" type="text"><br>
+    아이디: <input name="username" type="text"><br>
+    비밀번호: <input name="password" type="password"><br>
+    휴대전화: <input name="phonenum" type="text"><br>
+    이메일: <input name="email" type="text"><br>
+    <input type="submit" value="회원가입">
+</form>

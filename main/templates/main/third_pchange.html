@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>용기모아</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/third.css' %}">
+
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <input type="image" src="{% static 'img/logo.png' %}" alt="로고 이미지" width="100">
+            <div id="content"><h1><a href="{% url 'login' %}" id="hd">용기모아</a></h1></div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li class="tab"><a href="{% url 'first_intro' %}">&nbsp;&nbsp;&nbsp;소개&nbsp;&nbsp;&nbsp;</a></li>
+            <li class="tab"><a href="{% url 'second_my' %}">&nbsp;&nbsp;&nbsp;마이페이지&nbsp;&nbsp;&nbsp;</a></li>
+            <li class="tab"><a href="{% url 'third_pchange' %}">&nbsp;&nbsp;&nbsp;지역화폐로 전환&nbsp;&nbsp;&nbsp;</a></li>
+            <li class="tab"><a href="{% url 'blog' %}">&nbsp;&nbsp;&nbsp;공지사항&nbsp;&nbsp;&nbsp;</a></li>
+
+        </ul>
+        
+    </nav>
+    
+    <section>
+    <table>
+        <thead>
+            <tr>
+                <th class="ftsty">현재 포인트</th>
+                <th> -> </th>
+                <th class="ftsty">지역화폐</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{userpoint}}</td>
+                <td>
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="submit" value="전환하기">
+                </form>
+                </td>
+
+                <td>{{userpoint}}</td>
+            </tr>
+        </tbody>
+
+
+    </table>
+    <br>
+
+    <p>지역화폐 사용처 -> 추후 구현예정</p> 
+    <table border="1">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>점포명</th>
+                <th>점포주</th>
+                <th>위치</th>
+                <th>전화번호</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>신기한 떡볶이</td>
+                <td>김정원</td>
+                <td>수내동</td>
+                <td>031-700-9999</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>3대째 명품 부대찌게</td>
+                <td>강동원</td>
+                <td>도곡동</td>
+                <td>02-500-8898</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>돌고래 국시앤국수</td>
+                <td>신예찬</td>
+                <td>화서동</td>
+                <td>031-298-6323</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>별빛 카페</td>
+                <td>이한혁</td>
+                <td>도촌동</td>
+                <td>031-2222-3323</td>
+            </tr>
+
+
+
+
+            
+        </tbody>
+    </table>
+    </section>
+
+</body>
+
+</html>

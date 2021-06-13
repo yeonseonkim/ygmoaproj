@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>용기모아</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/second.css' %}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <input type="image" src="{% static 'img/logo.png' %}" alt="로고 이미지" width="100">
+            <div id="content"><h1><a href="{% url 'login' %}" id="hd">용기모아</a></h1></div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li class="tab"><a href="{% url 'first_intro' %}">&nbsp;&nbsp;&nbsp;소개&nbsp;&nbsp;&nbsp;</a></li>
+            <li class="tab"><a href="{% url 'second_my' %}">&nbsp;&nbsp;&nbsp;마이페이지&nbsp;&nbsp;&nbsp;</a></li>
+            <li class="tab"><a href="{% url 'third_pchange' %}">&nbsp;&nbsp;&nbsp;지역화폐로 전환&nbsp;&nbsp;&nbsp;</a></li>
+            <li class="tab"><a href="{% url 'blog' %}">&nbsp;&nbsp;&nbsp;공지사항&nbsp;&nbsp;&nbsp;</a></li>
+        </ul>        
+    </nav>
+    
+    <section>
+    	<div>
+    		<h3>&nbsp;나의 프로필</h3>
+			<table class="simple_table">
+				<tbody>
+					<tr>
+						<th class="row">이름</th>
+						<td>{{korname}}</td>
+					</tr>
+					<tr>
+						<th class="row">아이디</th>
+						<td>{{username}}</td>
+					</tr>
+					<tr>
+						<th class="row">전화번호</th>
+						<td>{{phonenum}}</td>
+				  	</tr>
+					  <!-- <tr>
+							<th class="row">참여횟수</th>
+							<td>{{usenums}}</td>
+					  </tr> -->
+				</tbody>
+		  	</table>
+
+    		<!-- <table>
+    			<tr>
+    				<td class="front">이름</td>
+    				<td class="back">{{korname}}</td>
+    			</tr>
+    			<tr>
+    				<td class="front">아이디</td>
+    				<td class="back">{{username}}</td>
+    			</tr>
+    			<tr>
+    				<td class="front">참여횟수</td>
+    				<td class="back">{{usenums}}</td>
+    			</tr>
+    		</table> -->
+    	</div><br><br>
+    	
+		
+		<br><br>
+    
+    </section>
+
+    <footer>
+    </footer>
+    
+</body>
+</html>

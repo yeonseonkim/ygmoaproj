@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fourth.css' %}"/>
+
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <input type="image" src="{% static 'img/logo.png' %}" alt="로고 이미지" width="100">
+            <div id="content"><h1><a href="{% url 'login' %}" id="hd">용기모아</a></h1></div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li class="tab"><a href="{% url 'first_intro' %}">&nbsp;&nbsp;&nbsp;소개&nbsp;&nbsp;&nbsp;</a></li>
+            <li class="tab"><a href="{% url 'second_my' %}">&nbsp;&nbsp;&nbsp;마이페이지&nbsp;&nbsp;&nbsp;</a></li>
+            <li class="tab"><a href="{% url 'third_pchange' %}">&nbsp;&nbsp;&nbsp;지역화폐로 전환&nbsp;&nbsp;&nbsp;</a></li>
+            <li class="tab"><a href="{% url 'blog' %}">&nbsp;&nbsp;&nbsp;공지사항&nbsp;&nbsp;&nbsp;</a></li>
+
+        </ul>
+        
+    </nav>
+    <br>
+
+    <section>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>제목</th>
+                <th>세부 내용</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for list in postlist %}
+                <tr>
+                    <td id="title">{{list.postname}}</td>
+                    <td id="notice">{{list.contents}}</td>
+            </tr>
+            {% endfor %}
+                        
+        </tbody>
+    </table>
+    </setcion>
+
+</body>
+
+</html>
+
+
+<!-- <html>
+    <head>
+        <title>Blog List</title>
+    </head>
+    <body>
+        <h1>게시판 페이지입니다</h1>
+        <table>
+        {% for list in postlist %}
+            <ul>
+                <li>{{list.postname}}</li>
+                <li>{{list.contents}}</li>
+            </ul>
+        {% endfor %}
+        </table>
+    </body>
+</html> -->

@@ -1,0 +1,25 @@
+
+(창은 10초 후에 닫힙니다)
+<h3>고객의 인증코드를 입력하시오</h3>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="getotp">
+    <br><br>
+    <input type="submit" value="적립하기">
+</form>
+
+<script type="text/javascript">
+    
+
+
+    setTimeout("WinClose();", 10000)
+
+    function WinClose()
+    {
+        top.window.open('about:blank','_self').close();
+        top.window.opener=self;
+        top.self.close();
+    }
+
+
+</script>

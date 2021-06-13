@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>인증번호</title>
+    </head>
+    <body>
+        <h3>매장 측에 아래의 인증번호 알려주세요.</h3>
+        <!-- <p>{{otpvalue}}</p> -->
+
+        <form method=POST>
+            {% csrf_token %}
+            <input type=number name="ctrlc" value={{otpvalue}}>
+            <br><br>
+            <button type=submit>확인</button>
+        </form>
+
+        <img src="/static/img/qrqr.png" alt="otpcheck로 qr연결" width="200">
+        
+    </body>
+</html>
